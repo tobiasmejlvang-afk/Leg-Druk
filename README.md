@@ -55,3 +55,4 @@ Designmaterialets fem koncepter er fortolket til én samlet app. Studio bygger i
 - `sw.js` – offline-cache for appens kernefiler.
 
 Alle kort og al kode er lavet til dette projekt. Google Fonts: DM Sans og Barlow Condensed (SIL Open Font License), med systemskrifter som fallback.
+
