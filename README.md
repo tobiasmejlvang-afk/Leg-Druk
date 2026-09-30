@@ -33,11 +33,21 @@ node scripts/serve.mjs dist
 - Alkoholfri som standard. Voksne kan aktivere en valgfri skål; ingen mængder eller drikkepres.
 - Web-app-manifest og offline-cache efter første onlinebesøg på et HTTPS-hostet site. Skrifttyper har lokale systemfallbacks.
 
-## Udgivelse
+## Udgivelse på GitHub Pages
 
-`node scripts/build.mjs` laver `dist/`. Upload mappens indhold til en statisk webhost. Relative stier gør appen kompatibel med GitHub Pages i en undermappe som `/Leg-Druk/`. Ingen database, API-nøgler eller serverfunktioner er nødvendige.
+Appen udgives fra `main` → `/docs` på GitHub Pages:
 
-GitHub Actions kører tests og build på push/PR og tilbyder den færdige webapp som artefakt. Workflowet ændrer ikke hostingindstillinger og publicerer ikke automatisk.
+https://tobiasmejlvang-afk.github.io/Leg-Druk/
+
+Efter ændringer i kildekoden skal den publicerede kopi bygges igen og committes sammen med ændringerne:
+
+```sh
+npm run build:pages
+```
+
+Det svarer til `node scripts/build.mjs --docs`. Bygget kopierer appens filer til `docs/` og tilføjer `.nojekyll`. Alle stier er relative, så appen fungerer under `/Leg-Druk/`. Ingen database, API-nøgler eller serverfunktioner er nødvendige.
+
+GitHub Actions kører tests og build og kontrollerer, at `docs/` svarer til kildekoden. GitHub Pages udgiver derefter fra mappen. `node scripts/build.mjs` bygger stadig til `dist/` til andre statiske webhosts.
 
 ## Data og afgrænsning
 

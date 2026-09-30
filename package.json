@@ -4,7 +4,15 @@
   "private": true,
   "type": "module",
   "description": "Et dansk party-game command center til tablet, mobil og desktop.",
-  "scripts": { "dev": "node scripts/serve.mjs", "build": "node scripts/build.mjs", "start": "node scripts/serve.mjs dist", "test": "node --test tests/engine.test.mjs" },
-  "engines": { "node": ">=20" }
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/serve.mjs dist",
+    "test": "node --test tests/engine.test.mjs",
+    "build:pages": "node scripts/build.mjs --docs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
 }
 
